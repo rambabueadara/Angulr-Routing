@@ -1,0 +1,21 @@
+<p>users works!</p>
+{{ title}}
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <td>{{user.id}}</td>
+            <td>{{user.username | uppercase}} </td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,30 @@
+<p>customer works!</p>
+<h1>
+    {{message}}
+</h1>
+<h3>
+    Interpolation Binding
+</h3>
+<p>Customer Code: {{ custobj.CustomerCode}}</p>
+<p>Customer Code: {{ custobj.CustomerName}}</p>
+<p>Customer Code: {{ custobj.CustomerAmount}}</p>
+
+<p>one way data binding (component/model to view) - property binding</p>
+<p>Customer Code : <input type="text" name="CustomerCode" value="{{custobj.CustomerCode}}"/></p>
+<p>Customer Name <input type="text" name="CustomerName" [value]="custobj.CustomerName"/></p>
+<p> Customer Amount <input type="text" name="CustomerAmount" [value]="custobj.CustomerAmount"/></p>
+
+<p>one way data binding (View to component/Model) - Event binding</p>
+<p>Customer Code : <input type="text" name="CustomerCode" (input)="custobj.CustomerCode=$any($event.target).value"/></p>
+<p>Customer Name :  <input type="text" name="CustomerName" (input)="custobj.CustomerName=$any($event.target).value"/></p>
+<p> Customer Amount : <input type="text" name="CustomerAmount" (input)="custobj.CustomerAmount=$any($event.target).value"/></p>
+<!-- 
+<p>Two way databinding </p>
+<p>Customer Code : <input type="text" name="CustomerCode"  value="{{custobj.CustomerCode}}" (input)="custobj.CustomerCode=$any($event.target).value"/></p>
+<p>Customer Name :  <input type="text" name="CustomerName"  value="{{custobj.CustomerName}}" (input)="custobj.CustomerName=$any($event.target).value"/></p>
+<p> Customer Amount : <input type="text" name="CustomerAmount"  value="{{custobj.CustomerAmount}}" (input)="custobj.CustomerAmount=$any($event.target).value"/></p> -->
+
+<p>Two way databinding </p>
+<p>Customer Code :  <input type="text" name="CustomerCode"  [(ngModel)]="custobj.CustomerCode"/></p>
+<p>Customer Name :  <input type="text" name="CustomerName"  [(ngModel)]="custobj.CustomerName"/></p>
+<p> Customer Amount : <input type="text" name="CustomerAmount"  [(ngModel)]="custobj.CustomerAmount"/></p>
